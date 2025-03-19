@@ -27,6 +27,7 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
             overflow-x: hidden;
+            padding-top: 76px; /* Added to account for fixed navbar */
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -341,97 +342,6 @@
             background-color: var(--black);
         }
 
-        /* Hero Section */
-        .hero-section {
-            margin-top: 76px;
-        }
-
-        .hero-content {
-            height: 80vh;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero-text {
-            position: relative;
-            color: var(--white);
-            max-width: 600px;
-            animation: fadeInUp 1s ease;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Categories Section */
-        .category-card {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 400px;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .category-img {
-            height: 100%;
-        }
-
-        .category-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .category-card:hover .category-img img {
-            transform: scale(1.05);
-        }
-
-        .category-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 2rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            color: var(--white);
-            transition: var(--transition);
-        }
-
-        .category-card:hover .category-content {
-            padding-bottom: 3rem;
-        }
-
-        .category-content h3 {
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
         /* Featured Products Section */
         .filter-buttons {
             display: flex;
@@ -587,92 +497,6 @@
 
         .add-to-cart-btn:hover {
             background-color: var(--black);
-        }
-
-        /* Quick View Modal */
-        .modal-content {
-            border: none;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .btn-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            z-index: 10;
-            background-color: var(--white);
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            opacity: 0.8;
-        }
-
-        .quick-view-image {
-            height: 100%;
-            min-height: 400px;
-        }
-
-        .quick-view-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .quick-view-content {
-            padding: 2rem;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            margin-top: 0.5rem;
-        }
-
-        .quantity-btn {
-            width: 35px;
-            height: 35px;
-            background-color: var(--light-gray);
-            border: 1px solid var(--medium-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .quantity-input {
-            width: 50px;
-            height: 35px;
-            text-align: center;
-            border: 1px solid var(--medium-gray);
-            margin: 0 0.5rem;
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            background-color: var(--light-gray);
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form {
-            margin-top: 2rem;
-        }
-
-        .newsletter-form .form-control {
-            height: 50px;
-            border-radius: 50px 0 0 50px;
-            border: 1px solid var(--medium-gray);
-            padding-left: 1.5rem;
-        }
-
-        .newsletter-form .btn {
-            border-radius: 0 50px 50px 0;
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
         }
 
         /* Footer */
@@ -844,16 +668,8 @@
 
         /* Responsive Styles */
         @media (max-width: 991.98px) {
-            .hero-content {
-                height: 60vh;
-            }
-            
             .search-container {
                 width: 150px;
-            }
-            
-            .category-card {
-                height: 300px;
             }
             
             .product-card {
@@ -862,15 +678,6 @@
         }
 
         @media (max-width: 767.98px) {
-            .hero-content {
-                height: 50vh;
-            }
-            
-            .hero-text {
-                text-align: center;
-                margin: 0 auto;
-            }
-            
             .search-container {
                 width: 100%;
                 margin-bottom: 1rem;
@@ -879,10 +686,6 @@
             .nav-icons {
                 justify-content: center;
                 margin-top: 1rem;
-            }
-            
-            .category-card {
-                height: 250px;
             }
             
             .footer-bottom-links {
@@ -906,10 +709,6 @@
             
             .product-image {
                 height: 250px;
-            }
-            
-            .quick-view-image {
-                min-height: 300px;
             }
             
             .product-card {
@@ -997,103 +796,6 @@
     </div>
     <div class="cart-overlay"></div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="hero-content" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070');">
-                        <div class="container">
-                            <div class="hero-text">
-                                <h1 class="display-4 fw-bold">Discover Your Next Great Read</h1>
-                                <p class="lead">Explore our vast collection of books for every reader</p>
-                                <a href="#featured" class="btn btn-primary btn-lg">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="hero-content" style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=2070');">
-                        <div class="container">
-                            <div class="hero-text">
-                                <h1 class="display-4 fw-bold">New Releases Every Week</h1>
-                                <p class="lead">Be the first to read the latest bestsellers and hidden gems</p>
-                                <a href="#featured" class="btn btn-primary btn-lg">Explore</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="hero-content" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2070');">
-                        <div class="container">
-                            <div class="hero-text">
-                                <h1 class="display-4 fw-bold">Sale Up To 50% Off</h1>
-                                <p class="lead">Get amazing deals on bestsellers and classics alike</p>
-                                <a href="#featured" class="btn btn-primary btn-lg">Shop Sale</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-5">Shop By Category</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="category-card">
-                        <div class="category-img">
-                            <!-- Updated Fiction Books image URL -->
-                            <img src="https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Fiction Books">
-                        </div>
-                        <div class="category-content">
-                            <h3>Fiction</h3>
-                            <a href="#" class="btn btn-outline-light">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="category-card">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=2073" alt="Non-Fiction Books">
-                        </div>
-                        <div class="category-content">
-                            <h3>Non-Fiction</h3>
-                            <a href="#" class="btn btn-outline-light">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="category-card">
-                        <div class="category-img">
-                            <img src="https://images.unsplash.com/photo-1471970394675-613138e45da3?q=80&w=2080" alt="Children's Books">
-                        </div>
-                        <div class="category-content">
-                            <h3>Children's Books</h3>
-                            <a href="#" class="btn btn-outline-light">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Featured Products Section -->
     <section id="featured" class="featured-products py-5">
         <div class="container">
@@ -1108,7 +810,7 @@
             </div>
             <div class="row g-4 product-grid">
                 <!-- Book 1 - The Great Gatsby -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="fiction">
+                <div class="col-md-4 product-item" data-category="fiction">
                     <div class="product-card">
                         <div class="product-card-inner">
                             <!-- Front of card -->
@@ -1154,54 +856,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Book 2 - Sapiens -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="non-fiction">
-                    <div class="product-card">
-                        <div class="product-card-inner">
-                            <!-- Front of card -->
-                            <div class="product-card-front">
-                                <div class="product-image">
-                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sapiens%20the%20reat%20history%20of%20humankind.jpg-A0boQVkNTooqWBdlM7LOSRwxy011Pt.jpeg" alt="Sapiens">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-title">Sapiens: A Brief History of Humankind</h3>
-                                    <div class="product-price">₹1,874</div>
-                                    <div class="product-rating">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                        <span>(38)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Back of card -->
-                            <div class="product-card-back">
-                                <h3 class="product-title">Sapiens: A Brief History of Humankind</h3>
-                                <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star"></i>
-                                    <span>(38 reviews)</span>
-                                </div>
-                                <div class="product-description">
-                                    <p>A groundbreaking narrative of humanity's creation and evolution that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be "human."</p>
-                                    <p>Author: Yuval Noah Harari</p>
-                                    <p>Pages: 464</p>
-                                </div>
-                                <div class="product-price mb-2">₹1,874</div>
-                                <button class="add-to-cart-btn" data-id="2" data-name="Sapiens: A Brief History of Humankind" data-price="1874" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sapiens%20the%20reat%20history%20of%20humankind.jpg-A0boQVkNTooqWBdlM7LOSRwxy011Pt.jpeg">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book 3 - Harry Potter -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="children">
+                <!-- Book 2 - Harry Potter -->
+                <div class="col-md-4 product-item" data-category="children">
                     <div class="product-card">
                         <div class="product-card-inner">
                             <!-- Front of card -->
@@ -1253,8 +909,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Book 4 - To Kill a Mockingbird -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="fiction">
+                <!-- Book 3 - To Kill a Mockingbird -->
+                <div class="col-md-4 product-item" data-category="fiction">
                     <div class="product-card">
                         <div class="product-card-inner">
                             <!-- Front of card -->
@@ -1299,259 +955,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Book 5 - Atomic Habits -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="non-fiction">
-                    <div class="product-card">
-                        <div class="product-card-inner">
-                            <!-- Front of card -->
-                            <div class="product-card-front">
-                                <div class="product-image">
-                                    <!-- Updated Atomic Habits image URL -->
-                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/atomic%20habits.jpg-lI0bfCB7vwyCe7EZOa646tI3DBW7af.jpeg" alt="Atomic Habits">
-                                    <div class="product-badge">New</div>
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-title">Atomic Habits</h3>
-                                    <div class="product-price">₹1,649</div>
-                                    <div class="product-rating">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                        <span>(89)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Back of card -->
-                            <div class="product-card-back">
-                                <h3 class="product-title">Atomic Habits</h3>
-                                <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                    <span>(89 reviews)</span>
-                                </div>
-                                <div class="product-description">
-                                    <p>No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results.</p>
-                                    <p>Author: James Clear</p>
-                                    <p>Pages: 320</p>
-                                </div>
-                                <div class="product-price mb-2">₹1,649</div>
-                                <button class="add-to-cart-btn" data-id="5" data-name="Atomic Habits" data-price="1649" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/atomic%20habits.jpg-lI0bfCB7vwyCe7EZOa646tI3DBW7af.jpeg">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book 6 - Charlotte's Web -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="children">
-                    <div class="product-card">
-                        <div class="product-card-inner">
-                            <!-- Front of card -->
-                            <div class="product-card-front">
-                                <div class="product-image">
-                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/charlotte%27s%20web.jpg-bX3tPWBMGSJZdCjDRWN8Hu7GfuqWu3.jpeg" alt="Charlotte's Web">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-title">Charlotte's Web</h3>
-                                    <div class="product-price">₹899</div>
-                                    <div class="product-rating">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                        <span>(72)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Back of card -->
-                            <div class="product-card-back">
-                                <h3 class="product-title">Charlotte's Web</h3>
-                                <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star"></i>
-                                    <span>(72 reviews)</span>
-                                </div>
-                                <div class="product-description">
-                                    <p>This beloved book by E. B. White tells the tale of a little girl named Fern who loved a little pig named Wilbur—and of Wilbur's dear friend Charlotte A. Cavatica, a beautiful large grey spider who lived with Wilbur in the barn.</p>
-                                    <p>Author: E.B. White</p>
-                                    <p>Pages: 192</p>
-                                </div>
-                                <div class="product-price mb-2">₹899</div>
-                                <button class="add-to-cart-btn" data-id="6" data-name="Charlotte's Web" data-price="899" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/charlotte%27s%20web.jpg-bX3tPWBMGSJZdCjDRWN8Hu7GfuqWu3.jpeg">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book 7 - 1984 -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="fiction">
-                    <div class="product-card">
-                        <div class="product-card-inner">
-                            <!-- Front of card -->
-                            <div class="product-card-front">
-                                <div class="product-image">
-                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1984-h9KBBj5uJq57hWttzS18Fb0S2QRmjo.jpeg" alt="1984">
-                                    <div class="product-badge sale">Sale</div>
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-title">1984</h3>
-                                    <div class="product-price">
-                                        <span class="original-price">₹1,274</span>
-                                        ₹749
-                                    </div>
-                                    <div class="product-rating">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                        <span>(64)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Back of card -->
-                            <div class="product-card-back">
-                                <h3 class="product-title">1984</h3>
-                                <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star"></i>
-                                    <span>(64 reviews)</span>
-                                </div>
-                                <div class="product-description">
-                                    <p>Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare work that grows more haunting as its futuristic purgatory becomes more real. Published in 1949, the book offers political satirist George Orwell's nightmarish vision of a totalitarian future.</p>
-                                    <p>Author: George Orwell</p>
-                                    <p>Pages: 328</p>
-                                </div>
-                                <div class="product-price mb-2">
-                                    <span class="original-price">₹1,274</span>
-                                    ₹749
-                                </div>
-                                <button class="add-to-cart-btn" data-id="7" data-name="1984" data-price="749" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1984-h9KBBj5uJq57hWttzS18Fb0S2QRmjo.jpeg">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Book 8 - Educated -->
-                <div class="col-md-6 col-lg-3 product-item" data-category="non-fiction">
-                    <div class="product-card">
-                        <div class="product-card-inner">
-                            <!-- Front of card -->
-                            <div class="product-card-front">
-                                <div class="product-image">
-                                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/educated%20a%20memoir.jpg-DoJNZgOs9msLAaQFwczdAMDW8CQcnw.jpeg" alt="Educated: A Memoir">
-                                </div>
-                                <div class="product-info">
-                                    <h3 class="product-title">Educated: A Memoir</h3>
-                                    <div class="product-price">₹1,349</div>
-                                    <div class="product-rating">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                        <i class="bi bi-star"></i>
-                                        <span>(48)</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Back of card -->
-                            <div class="product-card-back">
-                                <h3 class="product-title">Educated: A Memoir</h3>
-                                <div class="product-rating">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                    <i class="bi bi-star"></i>
-                                    <span>(48 reviews)</span>
-                                </div>
-                                <div class="product-description">
-                                    <p>An unforgettable memoir about a young girl who, kept out of school, leaves her survivalist family and goes on to earn a PhD from Cambridge University. A coming-of-age story that gets to the heart of what an education is and what it offers.</p>
-                                    <p>Author: Tara Westover</p>
-                                    <p>Pages: 352</p>
-                                </div>
-                                <div class="product-price mb-2">₹1,349</div>
-                                <button class="add-to-cart-btn" data-id="8" data-name="Educated: A Memoir" data-price="1349" data-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/educated%20a%20memoir.jpg-DoJNZgOs9msLAaQFwczdAMDW8CQcnw.jpeg">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick View Modal -->
-    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body p-0">
-                    <div class="row g-0">
-                        <div class="col-md-6">
-                            <div class="quick-view-image">
-                                <img src="/placeholder.svg" alt="Book" id="modalProductImage">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="quick-view-content p-4">
-                                <h2 id="modalProductTitle"></h2>
-                                <div class="product-rating mb-3">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-half"></i>
-                                    <span id="modalProductRating"></span>
-                                </div>
-                                <div class="product-price mb-4" id="modalProductPrice"></div>
-                                <p class="product-description mb-4" id="modalProductDescription">
-                                    Book description will appear here.
-                                </p>
-                                <div class="product-quantity mb-4">
-                                    <h5>Quantity:</h5>
-                                    <div class="quantity-selector">
-                                        <button class="quantity-btn minus">-</button>
-                                        <input type="number" value="1" min="1" max="10" class="quantity-input">
-                                        <button class="quantity-btn plus">+</button>
-                                    </div>
-                                </div>
-                                <button class="btn btn-primary w-100 modal-add-to-cart" id="modalAddToCart">Add to Cart</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section py-5">
-        <div class="container">
-            <div class="newsletter-content text-center">
-                <h2>Subscribe to Our Newsletter</h2>
-                <p>Get the latest updates on new releases and upcoming book sales</p>
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" class="form-control" placeholder="Your email address" required>
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
-                    </div>
-                </form>
             </div>
         </div>
     </section>
@@ -1640,10 +1043,6 @@
             const filterBtns = document.querySelectorAll('.filter-btn');
             const productItems = document.querySelectorAll('.product-item');
             const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
-            const modalAddToCart = document.getElementById('modalAddToCart');
-            const quantityInput = document.querySelector('.quantity-input');
-            const plusBtn = document.querySelector('.plus');
-            const minusBtn = document.querySelector('.minus');
             
             let cart = [];
             
@@ -1686,21 +1085,6 @@
                         }
                     });
                 });
-            });
-            
-            // Quantity buttons
-            plusBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value < 10) {
-                    quantityInput.value = value + 1;
-                }
-            });
-            
-            minusBtn.addEventListener('click', function() {
-                let value = parseInt(quantityInput.value);
-                if (value > 1) {
-                    quantityInput.value = value - 1;
-                }
             });
             
             // Add to cart functionality
@@ -1817,25 +1201,6 @@
                 });
             });
             
-            // Add to cart from modal
-            modalAddToCart.addEventListener('click', function() {
-                const id = this.getAttribute('data-id');
-                const name = this.getAttribute('data-name');
-                const price = this.getAttribute('data-price');
-                const image = this.getAttribute('data-image');
-                const quantity = parseInt(quantityInput.value);
-                
-                addToCart(id, name, price, image, quantity);
-                
-                // Close modal
-                const quickViewModalElement = document.getElementById('quickViewModal');
-                const quickViewModal = bootstrap.Modal.getInstance(quickViewModalElement);
-
-                if (quickViewModal) {
-                    quickViewModal.hide();
-                }
-            });
-            
             // Navbar scroll effect
             window.addEventListener('scroll', function() {
                 const navbar = document.querySelector('.navbar');
@@ -1848,34 +1213,16 @@
                 }
             });
             
-            // Newsletter form submission
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const emailInput = this.querySelector('input[type="email"]');
-                    const email = emailInput.value;
-                    
-                    if (email) {
-                        // Show success message (in a real app, you would send this to a server)
-                        alert('Thank you for subscribing to our newsletter!');
-                        emailInput.value = '';
-                    }
-                });
-            }
-            
             // Initialize animations on scroll
             function animateOnScroll() {
-                const elements = document.querySelectorAll('.category-card, .product-card, .section-title, .newsletter-content');
+                const elements = document.querySelectorAll('.product-card, .section-title');
                 
                 elements.forEach(element => {
                     const elementPosition = element.getBoundingClientRect().top;
                     const screenPosition = window.innerHeight / 1.2;
                     
                     if (elementPosition < screenPosition) {
-                        if (element.classList.contains('category-card')) {
-                            element.classList.add('slide-in-up');
-                        } else if (element.classList.contains('product-card')) {
+                        if (element.classList.contains('product-card')) {
                             element.classList.add('fade-in');
                         } else {
                             element.classList.add('slide-in-up');
